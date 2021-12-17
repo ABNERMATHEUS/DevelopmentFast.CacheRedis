@@ -8,7 +8,8 @@
     <Description>A library to aid in rapid development to apply Cache layer using Redis, using Repository Pattern Generic.</Description>
     <PackageIcon>Logo.png</PackageIcon>
     <RepositoryType>git.</RepositoryType>    
-	 <Version>1.0.0</Version>
+	 <Version>1.0.0</Version>    
+	 <PackageId>DevelopmentFast.CacheRedis</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

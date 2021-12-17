@@ -7,6 +7,11 @@ Uma biblioteca para ajudar no rápido desenvolvimento para aplicar camada de Cac
 
 # Development Fast - Repository
 
+
+| Package |  Version | Popularity |
+| ------- | ----- | ----- |
+| `DevelopmentFast.Cache` | [![NuGet](https://img.shields.io/nuget/v/DevelopmentFast.CacheRedis.svg)](https://www.nuget.org/packages/DevelopmentFast.CacheRedis) | [![Nuget](https://img.shields.io/nuget/dt/DevelopmentFast.CacheRedis.svg)](https://www.nuget.org/packages/DevelopmentFast.CacheRedis) |
+
 ### O que é ?
 
 <aside>

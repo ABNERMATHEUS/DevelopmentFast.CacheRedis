@@ -25,9 +25,17 @@ Uma biblioteca para ajudar no rápido desenvolvimento para aplicar camada de Cac
 
 </aside>
 
-### Onde estará disponível ?
+### Onde está disponível ?
 
 <aside>
-📌 Estará disponível no .Nuget.org
+📌 Está disponível no .Nuget.org
+  
+  <br/>
+  <a href="https://www.nuget.org/packages/DevelopmentFast.CacheRedis">Link do Nuget</a>
+    <br/>
+  
+  `Install-Package DevelopmentFast.CacheRedis -Version 1.0.0`
+  
+  
 
 </aside>

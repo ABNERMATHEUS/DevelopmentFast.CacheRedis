@@ -39,3 +39,51 @@ Uma biblioteca para ajudar no rápido desenvolvimento para aplicar camada de Cac
   
 
 </aside>
+
+
+### Como utilizar ?
+
+
+### Injeções de dependência e conexão
+
+```csharp
+builder.Services.AddSingleton<IDistributedCache, RedisCache>();
+builder.Services.AddStackExchangeRedisCache(x => x.Configuration = "localhost:6379");
+```
+
+### Construtor
+
+```csharp
+private readonly IBaseRedisRepositoryDF _baseRedisRepositoryDF;
+
+public StudentController(IBaseRedisRepositoryDF baseRedisRepositoryDF)
+{
+    this._baseRedisRepositoryDF = baseRedisRepositoryDF;
+}
+```
+
+### Criar ou Atualizar assíncrono
+
+```csharp
+var student = new Student("name_student");
+await _baseRedisRepositoryDF.CreateOrUpdateAsync<Student>("key_example", student , TimeSpan.FromMinutes(1));
+```
+
+### Criar ou Atualizar síncrono
+
+```csharp
+var student = new Student("name_student");
+_baseRedisRepositoryDF.CreateOrUpdate<Student>("key_example", student , TimeSpan.FromMinutes(1));
+```
+
+### Buscar assíncrono
+
+```csharp
+var student = await _baseRedisRepositoryDF.GetAsync<Student>("key_example");
+```
+
+### Buscar síncrono
+
+```csharp
+var student =  _baseRedisRepositoryDF.Get<Student>("key_example");
+```

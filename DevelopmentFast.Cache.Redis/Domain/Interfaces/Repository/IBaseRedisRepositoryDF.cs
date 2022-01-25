@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevelopmentFast.Cache.Redis.Domain.Interfaces.Repository
 {
-    public interface IBaseRedisRepositoryDF
+    public interface IBaseRedisRepositoryDF 
     {
         T? Get<T>(string key);
         Task<T?> GetAsync<T>(string key);

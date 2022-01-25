@@ -33,9 +33,21 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
+        
+    - name: Setup redis
+      uses: supercharge/redis-github-action@1.2.0
+      with: 
+        redis-version: 6
+
+    - name: Install redis cli # so we can test the server
+      run: sudo apt-get install -y redis-tools
+
+    - name: Verify that redis is up
+      run: redis-cli ping
+    
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      
+  
   publish:
 
     runs-on: ubuntu-latest
@@ -80,3 +92,4 @@ jobs:
 
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
           # INCLUDE_SYMBOLS: false
+      

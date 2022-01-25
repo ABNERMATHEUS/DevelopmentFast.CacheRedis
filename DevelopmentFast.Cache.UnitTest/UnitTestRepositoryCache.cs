@@ -93,6 +93,7 @@ public class UnitTestRepositoryCache
 
             //assert
             Assert.Equal(student.Id, getValueCache.Id);
+            await redisCache.RefreshAsync(student.Id);
         }
         catch (RedisConnectionException ex)
         {

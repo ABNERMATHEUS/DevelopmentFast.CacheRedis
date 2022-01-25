@@ -6,21 +6,24 @@ namespace DevelopmentFast.Cache.Redis.Extension;
 
 public static class ServicesExtension
 {
-    public static void AddSingletonRedisCacheDF(this IServiceCollection service,Action<RedisCacheOptions> options)
+    public static IServiceCollection AddSingletonRedisCacheDF(this IServiceCollection service,Action<RedisCacheOptions> options)
     {
         service.AddSingleton<IDistributedCache, RedisCache>();
         service.AddStackExchangeRedisCache(options);
+        return service;
     }
     
-    public static void AddTransientRedisCacheDF(this IServiceCollection service,Action<RedisCacheOptions> options)
+    public static IServiceCollection AddTransientRedisCacheDF(this IServiceCollection service,Action<RedisCacheOptions> options)
     {
         service.AddTransient<IDistributedCache, RedisCache>();
         service.AddStackExchangeRedisCache(options);
+        return service;
     }
     
-    public static void AddScopedRedisCacheDF(this IServiceCollection service, Action<RedisCacheOptions> options)
+    public static IServiceCollection AddScopedRedisCacheDF(this IServiceCollection service, Action<RedisCacheOptions> options)
     {
         service.AddScoped<IDistributedCache, RedisCache>();
         service.AddStackExchangeRedisCache(options);
+        return service;
     }
 }

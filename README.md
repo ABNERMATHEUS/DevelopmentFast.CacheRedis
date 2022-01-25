@@ -25,7 +25,7 @@ Uma biblioteca para ajudar no rápido desenvolvimento para aplicar camada de Cac
 
 </aside>
 
-### Onde está disponível ?
+### Where is it available ?
 
 <aside>
 📌 Está disponível no .Nuget.org
@@ -34,24 +34,44 @@ Uma biblioteca para ajudar no rápido desenvolvimento para aplicar camada de Cac
   <a href="https://www.nuget.org/packages/DevelopmentFast.CacheRedis">Link do Nuget</a>
     <br/>
   
-  `Install-Package DevelopmentFast.CacheRedis -Version 1.0.0`
+  `Install-Package DevelopmentFast.CacheRedis -Version 1.0.1`
   
-  
-
 </aside>
 
 
-### Como utilizar ?
+### How to use ?
 
 
-### Injeções de dependência e conexão
+### Dependency and connection injections
 
 ```csharp
 builder.Services.AddSingleton<IDistributedCache, RedisCache>();
 builder.Services.AddStackExchangeRedisCache(x => x.Configuration = "localhost:6379");
 ```
+### Or
+```csharp
 
-### Construtor
+//Scoped
+  services.AddScopedRedisCacheDF(x =>
+  {
+      x.Configuration = "localhost:6379";
+  });
+
+//Transient
+  services.AddTransientRedisCacheDF(x =>
+  {
+      x.Configuration = "localhost:6379";
+  });
+
+//Singleton
+  services.AddSingletonRedisCacheDF(x =>
+  {
+      x.Configuration = "localhost:6379";
+  });
+```
+
+
+### Constructor
 
 ```csharp
 private readonly IBaseRedisRepositoryDF _baseRedisRepositoryDF;
@@ -62,27 +82,27 @@ public StudentController(IBaseRedisRepositoryDF baseRedisRepositoryDF)
 }
 ```
 
-### Criar ou Atualizar assíncrono
+### Create or Update Asynchronous
 
 ```csharp
 var student = new Student("name_student");
 await _baseRedisRepositoryDF.CreateOrUpdateAsync<Student>("key_example", student , TimeSpan.FromMinutes(1));
 ```
 
-### Criar ou Atualizar síncrono
+### Create or Update Synchronous
 
 ```csharp
 var student = new Student("name_student");
 _baseRedisRepositoryDF.CreateOrUpdate<Student>("key_example", student , TimeSpan.FromMinutes(1));
 ```
 
-### Buscar assíncrono
+### Get asynchronous
 
 ```csharp
 var student = await _baseRedisRepositoryDF.GetAsync<Student>("key_example");
 ```
 
-### Buscar síncrono
+### Get Synchronous
 
 ```csharp
 var student =  _baseRedisRepositoryDF.Get<Student>("key_example");

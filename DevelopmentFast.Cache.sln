@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Logo.svg = Logo.svg
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevelopmentFast.Cache.UnitTest", "DevelopmentFast.Cache.UnitTest\DevelopmentFast.Cache.UnitTest.csproj", "{A668F230-009F-465D-9152-03A05021BAA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{63B3453A-1225-464B-B0E8-215EB7142413}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63B3453A-1225-464B-B0E8-215EB7142413}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63B3453A-1225-464B-B0E8-215EB7142413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A668F230-009F-465D-9152-03A05021BAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A668F230-009F-465D-9152-03A05021BAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A668F230-009F-465D-9152-03A05021BAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A668F230-009F-465D-9152-03A05021BAA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -114,7 +114,7 @@ var student =  _baseRedisRepositoryDF.Get<Student>("key_example");
 _baseRedisRepositoryDF.Remove("key_example");
 ```
 
-### Remove Asynchronous
+### Remove asynchronous
 
 ```csharp
 _baseRedisRepositoryDF.RemoveAsync("key_example");

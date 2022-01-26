@@ -50,8 +50,9 @@ public class UnitTestRepositoryCache
         {
             Assert.False(true);
         }
-        repositoryCacheMock.Verify(x=> x.Get<StudentTest>(It.Is<string>(y => y == key)),Times.Once);
-        repositoryCacheMock.Verify(x=>x.CreateOrUpdate(key, student, TimeSpan.MaxValue),Times.Once);
+
+        repositoryCacheMock.Verify(x => x.Get<StudentTest>(It.Is<string>(y => y == key)), Times.Once);
+        repositoryCacheMock.Verify(x => x.CreateOrUpdate(key, student, TimeSpan.MaxValue), Times.Once);
     }
 
     [Fact]
@@ -62,7 +63,7 @@ public class UnitTestRepositoryCache
         var key = student.Id;
         var repositoryCacheMock = new Mock<IBaseRedisRepositoryDF>();
         repositoryCacheMock.Setup(x => x.CreateOrUpdateAsync(key, student, TimeSpan.MaxValue))
-            .Callback( () =>
+            .Callback(() =>
             {
                 repositoryCacheMock.Setup(x => x.GetAsync<StudentTest>(It.Is<string>(y => y == key)))
                     .Returns<string>(_ => Task.Run(() => student));
@@ -83,8 +84,9 @@ public class UnitTestRepositoryCache
         {
             Assert.False(true);
         }
-        repositoryCacheMock.Verify(x=> x.GetAsync<StudentTest>(It.Is<string>(y => y == key)),Times.Once);
-        repositoryCacheMock.Verify(x=>x.CreateOrUpdateAsync(key, student, TimeSpan.MaxValue),Times.Once);
+
+        repositoryCacheMock.Verify(x => x.GetAsync<StudentTest>(It.Is<string>(y => y == key)), Times.Once);
+        repositoryCacheMock.Verify(x => x.CreateOrUpdateAsync(key, student, TimeSpan.MaxValue), Times.Once);
     }
 
     [Fact]
@@ -98,7 +100,7 @@ public class UnitTestRepositoryCache
                 Configuration = "localhost:6379"
             };
             var redisCache = new RedisCache(option);
-            
+
             var student = _fixture.Create<StudentTest>();
             var key = student.Id;
             var repositoryCache = new BaseRedisRepositoryDF(redisCache);
@@ -111,9 +113,8 @@ public class UnitTestRepositoryCache
             //assert
             if (getValueCache != null)
             {
-
                 Assert.Equal(student.Id, getValueCache.Id);
-                await redisCache.RefreshAsync(student.Id);
+                await redisCache.RemoveAsync(student.Id);
             }
             else
             {
@@ -125,6 +126,5 @@ public class UnitTestRepositoryCache
             _testOutputHelper.WriteLine(ex.Message);
             throw;
         }
-
     }
 }

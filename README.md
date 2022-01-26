@@ -12,26 +12,26 @@ Uma biblioteca para ajudar no rápido desenvolvimento para aplicar camada de Cac
 | ------- | ----- | ----- |
 | `DevelopmentFast.Cache` | [![NuGet](https://img.shields.io/nuget/v/DevelopmentFast.CacheRedis.svg)](https://www.nuget.org/packages/DevelopmentFast.CacheRedis) | [![Nuget](https://img.shields.io/nuget/dt/DevelopmentFast.CacheRedis.svg)](https://www.nuget.org/packages/DevelopmentFast.CacheRedis) |
 
-### O que é ?
+### What is it ?
 
 <aside>
-📌 É uma biblioteca em .NET com a responsabilidade ajudar no rápido desenvolvimento para aplicar camada de Cache utilizando Redis, usando Repository Pattern.
+📌 It is a .NET library with the responsibility to help in the fast development to apply Cache layer using Redis, using Repository Pattern.
 </aside>
 
-### Por que eu criei ?
+### Why i created ?
 
 <aside>
-📌 Para facilitar o desenvolvimento e economizar o tempo que eu tinha de configurar uma camada de cache para aplicar em qualquer lugar do projeto.
+📌 To make development easier and save the time I had to configure a cache layer to apply anywhere in the project.
 
 </aside>
 
 ### Where is it available ?
 
 <aside>
-📌 Está disponível no .Nuget.org
+📌 It is available on .Nuget.org
   
   <br/>
-  <a href="https://www.nuget.org/packages/DevelopmentFast.CacheRedis">Link do Nuget</a>
+  <a href="https://www.nuget.org/packages/DevelopmentFast.CacheRedis">Nuget Link</a>
     <br/>
   
   `Install-Package DevelopmentFast.CacheRedis -Version 1.0.1`

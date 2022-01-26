@@ -82,14 +82,14 @@ public StudentController(IBaseRedisRepositoryDF baseRedisRepositoryDF)
 }
 ```
 
-### Create or Update Asynchronous
+### Create or Update asynchronous
 
 ```csharp
 var student = new Student("name_student");
 await _baseRedisRepositoryDF.CreateOrUpdateAsync<Student>("key_example", student , TimeSpan.FromMinutes(1));
 ```
 
-### Create or Update Synchronous
+### Create or Update synchronous
 
 ```csharp
 var student = new Student("name_student");
@@ -102,8 +102,33 @@ _baseRedisRepositoryDF.CreateOrUpdate<Student>("key_example", student , TimeSpan
 var student = await _baseRedisRepositoryDF.GetAsync<Student>("key_example");
 ```
 
-### Get Synchronous
+### Get synchronous
 
 ```csharp
 var student =  _baseRedisRepositoryDF.Get<Student>("key_example");
+```
+
+### Remove synchronous
+
+```csharp
+_baseRedisRepositoryDF.Remove("key_example");
+```
+
+### Remove Asynchronous
+
+```csharp
+_baseRedisRepositoryDF.RemoveAsync("key_example");
+```
+
+
+### Refresh synchronous
+
+```csharp
+_baseRedisRepositoryDF.Refresh("key_example");
+```
+
+### Refresh asynchronous
+
+```csharp
+_baseRedisRepositoryDF.RefreshAsync("key_example");
 ```
